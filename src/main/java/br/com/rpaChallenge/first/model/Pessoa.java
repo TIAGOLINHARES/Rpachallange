@@ -59,6 +59,12 @@ public class Pessoa {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	@Override
+	public String toString() {
+		return "Pessoa [firstName=" + firstName + ", lastName=" + lastName + ", companyName=" + companyName
+				+ ", roleInCompany=" + roleInCompany + ", address=" + address + ", email=" + email + ", phoneNumber="
+				+ phoneNumber + "]";
+	}
 	
 	
 	

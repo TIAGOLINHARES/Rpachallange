@@ -13,34 +13,46 @@ import br.com.rpaChallenge.first.model.Pessoa;
 
 public class RpaController {
 
-	public static void imprimir(List<Pessoa> pessoas) {
+	private By byXpathFirstName = By.xpath("//input[@ng-reflect-name='labelFirstName']");
+	private By byXpathLastname = By.xpath("//input[@ng-reflect-name='labelLastName']");
+	private By byXpathCompanyName = By.xpath("//input[@ng-reflect-name='labelCompanyName']");
+	private By byXpathRoleInCompany = By.xpath("//input[@ng-reflect-name='labelRole']");
+	private By byXpathAddress = By.xpath("//input[@ng-reflect-name='labelAddress']");
+	private By byXpathEmail = By.xpath("//input[@ng-reflect-name='labelEmail']");
+	private By byXpathLabelPhone = By.xpath("//input[@ng-reflect-name='labelPhone']");
 
-		System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
+	public void imprimir(List<Pessoa> pessoas) {
+
 		WebDriver driver = new ChromeDriver(getChromeOptions());
 		driver.get("http://www.rpachallenge.com/");
 
 		driver.findElement(By.xpath("//button[@_ngcontent-c1]")).click();
 
-		for (int i = 0; i < 10; i++) {
+		for (Pessoa pessoa : pessoas) {
+			try {
 
-			// first name
-			driver.findElement(By.xpath("//input[@ng-reflect-name=\"labelFirstName\"]"))
-					.sendKeys(pessoas.get(i).getFirstName());
-			driver.findElement(By.xpath("//input[@ng-reflect-name=\"labelLastName\"]"))
-					.sendKeys(pessoas.get(i).getLastName());
-			driver.findElement(By.xpath("//input[@ng-reflect-name=\"labelCompanyName\"]"))
-					.sendKeys(pessoas.get(i).getCompanyName());
-			driver.findElement(By.xpath("//input[@ng-reflect-name=\"labelRole\"]"))
-					.sendKeys(pessoas.get(i).getRoleInCompany());
-			driver.findElement(By.xpath("//input[@ng-reflect-name='labelAddress']"))
-					.sendKeys(pessoas.get(i).getAddress());
-			driver.findElement(By.xpath("//input[@ng-reflect-name=\"labelEmail\"]"))
-					.sendKeys(pessoas.get(i).getEmail());
-			driver.findElement(By.xpath("//input[@ng-reflect-name=\"labelPhone\"]"))
-					.sendKeys(pessoas.get(i).getPhoneNumber().toString());
+				driver.findElement(byXpathFirstName).sendKeys(pessoa.getFirstName());
+				driver.findElement(byXpathLastname).sendKeys(pessoa.getLastName());
+				driver.findElement(byXpathCompanyName).sendKeys(pessoa.getCompanyName());
+				driver.findElement(byXpathRoleInCompany).sendKeys(pessoa.getRoleInCompany());
+				driver.findElement(byXpathAddress).sendKeys(pessoa.getAddress());
+				driver.findElement(byXpathEmail).sendKeys(pessoa.getEmail());
+				driver.findElement(byXpathLabelPhone).sendKeys(pessoa.getPhoneNumber().toString());
 
-			driver.findElement(By.xpath("//input[@_ngcontent-c1]")).click();
+				driver.findElement(By.xpath("//input[@_ngcontent-c1]")).click();
+				System.out.println(pessoa.getFirstName() + " Inserida com Sucesso!");
+			} catch (Exception e) {
 
+				driver.findElement(byXpathFirstName).clear();
+				driver.findElement(byXpathLastname).clear();
+				driver.findElement(byXpathCompanyName).clear();
+				driver.findElement(byXpathRoleInCompany).clear();
+				driver.findElement(byXpathAddress).clear();
+				driver.findElement(byXpathEmail).clear();
+				driver.findElement(byXpathLabelPhone).clear();
+				System.out.println("Não foi possivel inserir: " + pessoa.toString() + e.getMessage());
+
+			}
 		}
 
 		String mensagemFinal = driver.findElement(By.xpath("//div[@class='message2']")).getText();
