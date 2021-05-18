@@ -42,8 +42,7 @@ public class ExcelController {
 		rows.remove(0);
 		
 		
-		rows.forEach(row -> {
-			// setando as celulas
+		for (Row row : rows) {
 			List<Cell> cells = (List<Cell>) toList(row.cellIterator());
 			
 			
@@ -58,7 +57,7 @@ public class ExcelController {
 			pessoa.setPhoneNumber((long) cells.get(6).getNumericCellValue());
 			
 			pessoas.add(pessoa);
-		});
+		};
 
 		return pessoas;
 
