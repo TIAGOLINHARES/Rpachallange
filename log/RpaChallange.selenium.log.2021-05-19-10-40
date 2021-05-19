@@ -1,0 +1,3 @@
+2021-05-19 10:40:49 INFO  ExcelController:61 - Cannot get a NUMERIC value from a STRING cell
+2021-05-19 10:40:49 INFO  RpaChallengeController:42 - Planilha esta vazia
+2021-05-19 10:40:49 INFO  Main:23 - Fim da automação

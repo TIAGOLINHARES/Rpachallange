@@ -7,7 +7,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -48,6 +47,7 @@ public class ExcelController {
 					pessoa.setAddress(row.getCell(4).getStringCellValue());
 					pessoa.setEmail(row.getCell(5).getStringCellValue());
 					pessoa.setPhoneNumber((long) row.getCell(6).getNumericCellValue());
+					
 
 					pessoas.add(pessoa);
 				}
@@ -80,24 +80,18 @@ public class ExcelController {
 
 				Row row = sheet.createRow(indexRow++);
 
-				Cell cell = row.createCell(0);
-				cell.setCellValue(pessoa.getFirstName());
-				cell = row.createCell(1);
-				cell.setCellValue(pessoa.getLastName());
-				cell = row.createCell(2);
-				cell.setCellValue(pessoa.getCompanyName());
-				cell = row.createCell(3);
-				cell.setCellValue(pessoa.getRoleInCompany());
-				cell = row.createCell(4);
-				cell.setCellValue(pessoa.getAddress());
-				cell = row.createCell(5);
-				cell.setCellValue(pessoa.getEmail());
-				cell = row.createCell(6);
-				cell.setCellValue(pessoa.getPhoneNumber());
+				row.createCell(0).setCellValue(pessoa.getFirstName());
+				row.createCell(1).setCellValue(pessoa.getLastName());
+				row.createCell(2).setCellValue(pessoa.getCompanyName());
+				row.createCell(3).setCellValue(pessoa.getRoleInCompany());
+				row.createCell(4).setCellValue(pessoa.getAddress());
+				row.createCell(5).setCellValue(pessoa.getEmail());
+				row.createCell(6).setCellValue(pessoa.getPhoneNumber());
+				row.createCell(7).setCellValue(pessoa.getRegisterInputSucess());
 
 			}
 
-			String diretorioArquivo = "C:\\\\Users\\\\Tiago Linhares\\\\Documents\\\\xls\\\\rpaChallangeFirst.xlsx";
+			String diretorioArquivo = "C:\\Users\\Tiago Linhares\\Documents\\xls\\rpaChallangeFirst.xlsx";
 			FileOutputStream fileOutput = new FileOutputStream(diretorioArquivo);
 			workbook.write(fileOutput);
 			workbook.close();

@@ -1,0 +1,7 @@
+2021-05-19 10:37:27 INFO  Main:18 - Iniciando Automação
+2021-05-19 10:37:28 INFO  RpaChallengeController:42 - Planilha esta vazia
+2021-05-19 10:37:28 INFO  Main:23 - Fim da automação
+2021-05-19 10:37:46 INFO  Main:18 - Iniciando Automação
+2021-05-19 10:37:46 INFO  ExcelController:61 - Cannot get a NUMERIC value from a STRING cell
+2021-05-19 10:37:46 INFO  RpaChallengeController:42 - Planilha esta vazia
+2021-05-19 10:37:46 INFO  Main:23 - Fim da automação

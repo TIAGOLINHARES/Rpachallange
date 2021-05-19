@@ -1,0 +1,4 @@
+2021-05-18 21:30:43 INFO  Main:18 - Iniciando Automação
+2021-05-18 21:30:43 INFO  ExcelController:61 - .\arquivosExcel\challenge.xlsx (O sistema não pode encontrar o caminho especificado)
+2021-05-18 21:30:43 INFO  RpaChallengeController:42 - Planilha esta vazia
+2021-05-18 21:30:43 INFO  Main:23 - Fim da automação

@@ -14,7 +14,16 @@ public class Pessoa {
 	private String address;
 	private String email;
 	private Long phoneNumber;
+	private boolean registerInputSucess;
 	
+	
+	
+	public boolean getRegisterInputSucess() {
+		return registerInputSucess;
+	}
+	public void setRegisterInputSucess(boolean registerInputSucess) {
+		this.registerInputSucess = registerInputSucess;
+	}
 	
 	
 	public Long getPhoneNumber() {

@@ -38,7 +38,7 @@ public class RpaChallengeController {
 			rpaController.inputDataInChallange(pessoas);
 			excelController.writeOutputFile(pessoas);
 		} else {
-			System.out.println("Planilha esta vazia");
+			
 			log.info("Planilha esta vazia");
 		}
 	}
@@ -66,6 +66,8 @@ public class RpaChallengeController {
 				
 				
 				log.info(pessoa.getFirstName() + " Inserida com Sucesso!");
+				pessoa.setRegisterInputSucess(true);
+				
 			} catch (Exception e) {
 
 				driver.findElement(byXpathFirstName).clear();
