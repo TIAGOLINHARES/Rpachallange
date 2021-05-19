@@ -1,0 +1,13 @@
+2021-05-18 21:18:08 INFO  RpaChallengeController:68 - John Inserida com Sucesso!
+2021-05-18 21:18:09 INFO  RpaChallengeController:68 - Jane Inserida com Sucesso!
+2021-05-18 21:18:10 INFO  RpaChallengeController:68 - Albert Inserida com Sucesso!
+2021-05-18 21:18:10 INFO  RpaChallengeController:68 - Michael Inserida com Sucesso!
+2021-05-18 21:18:11 INFO  RpaChallengeController:68 - Doug Inserida com Sucesso!
+2021-05-18 21:18:11 INFO  RpaChallengeController:68 - Jessie Inserida com Sucesso!
+2021-05-18 21:18:12 INFO  RpaChallengeController:68 - Stan Inserida com Sucesso!
+2021-05-18 21:18:12 INFO  RpaChallengeController:68 - Michelle Inserida com Sucesso!
+2021-05-18 21:18:13 INFO  RpaChallengeController:68 - Stacy Inserida com Sucesso!
+2021-05-18 21:18:13 INFO  RpaChallengeController:68 - Lara Inserida com Sucesso!
+2021-05-18 21:18:13 INFO  RpaChallengeController:85 - Your success rate is 100% ( 70 out of 70 fields) in 5817 milliseconds
+2021-05-18 21:18:18 INFO  ExcelController:105 - Arquivo exportado com sucesso
+2021-05-18 21:18:18 INFO  Main:23 - Fim da automação

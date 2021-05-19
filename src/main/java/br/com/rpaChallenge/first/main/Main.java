@@ -1,35 +1,26 @@
 package br.com.rpaChallenge.first.main;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
-
-import java.util.List;
-
-import br.com.rpaChallenge.first.controller.ExcelController;
-import br.com.rpaChallenge.first.controller.RpaController;
-import br.com.rpaChallenge.first.model.Pessoa;
-
-
+import br.com.rpaChallenge.first.controller.RpaChallengeController;
 
 public class Main {
 
-	public static void main(String[] args)  {
+	private static Logger log = Logger.getLogger(Main.class);
+
+	public static void main(String[] args) {
+
 		
 		System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
-		ExcelController excelController = new ExcelController();
-		List<Pessoa> pessoas = excelController.criar();
-		
-		RpaController rpaController = new RpaController();
-		
-		rpaController.imprimir(pessoas);
-		
+		PropertyConfigurator.configure("resources\\log4j.properties");
+
+		log.info("Iniciando Automação");
+
+		RpaChallengeController rpaController = new RpaChallengeController();
+		rpaController.initRobot(rpaController);
+
+		log.info("Fim da automação");
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
 }
